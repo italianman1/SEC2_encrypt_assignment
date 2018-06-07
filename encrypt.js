@@ -20,11 +20,22 @@ function encryptMessage(){
     }
 
     if(newUser){
-        var encrypted_message = "";
-        users[document.getElementById('name').value] = document.getElementById('password').value;
-        var message_to_encrypt = document.getElementById('encrypted_text').value;
-        encrypted_message = CryptoJS.AES.encrypt(message_to_encrypt, secret);
-        messages[document.getElementById('name').value] = encrypted_message;
+        var userExists = false;
+
+        for (var key in users) {
+            if(key.toLowerCase() === document.getElementById('name').value.toLowerCase()){
+                alert("There is already someone with this name");
+            }
+        }
+
+        if(!userExists){
+            var encrypted_message = "";
+            users[document.getElementById('name').value] = document.getElementById('password').value;
+            var message_to_encrypt = document.getElementById('encrypted_text').value;
+            encrypted_message = CryptoJS.AES.encrypt(message_to_encrypt, secret);
+            messages[document.getElementById('name').value] = encrypted_message;
+        }
+
     }
 
     console.log(messages);
