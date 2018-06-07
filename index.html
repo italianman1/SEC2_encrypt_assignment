@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt web app</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<h1>Encrypt-R-us</h1>
+
+<div class="form">
+    <div class="form_input">
+        <label for="name">Naam: </label>
+        <input id="name" type="text"/>
+    </div>
+
+    <div class="form_input">
+        <label for="encrypted_text">Text:</label>
+        <textarea id="encrypted_text">Enter encrypted message here...</textarea>
+    </div>
+
+    <div class="form_input">
+        <label for="password">Wachtwoord:</label>
+        <input id="password" type="password">
+    </div>
+
+    <button id="send" type="submit" onclick="encryptMessage()">Verstuur!</button>
+</div>
+
+
+
+</body>
+<script src="encrypt.js"></script>
+</html>
